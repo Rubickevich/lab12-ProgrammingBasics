@@ -31,21 +31,6 @@ void generateProducts(product* productsArray, string* firstNameArray, string* se
 		productsArray[i].productName = tmp;
 	}
 };
-void generateCountries(product* productsArray, string* firstCountryArray, string* secondCountryArray, string* thirdCountryArray)
-{
-	int x = 0;
-	for (int i = 0; i < 5; i++) // теж саме для країни, але тепер 125
-	{
-		for (int j = 0; j < 5; j++)
-		{
-			for (int k = 0; k < 5; k++)
-			{
-				productsArray[x].country = firstCountryArray[i] + secondCountryArray[j] + thirdCountryArray[k];
-				x++;
-			}
-		}
-	}
-};
 void generateAmount(product* productsArray)
 {
 	for (int i = 0; i < 125; i++) //теж саме для поставок
@@ -97,7 +82,6 @@ int main()
 	string secondCountryArray[5] = { " \"Новий"," \"Об'єднанний"," \"Червоний"," \"Новітній"," \"Стародавній" };
 	string thirdCountryArray[5] = { " Світ\""," Спокій\""," Рух\""," Принцип\""," Ідеал\"" };
 	generateProducts(productsArray, firstNameArray, secondNameArray);
-	generateCountries(productsArray, firstCountryArray, secondCountryArray, thirdCountryArray);
 	generateAmount(productsArray);
 	giveInfo(productsArray);
 }
